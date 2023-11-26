@@ -1,8 +1,9 @@
-from ingredient_module import add_ingredient, display_ingredient, save_ingredients_to_file, load_ingredients_from_file
+from ingredient_module import IngredientModule as im
 
 try:
     file_name ="ingredient.txt"
-    ingredient_list = load_ingredients_from_file(file_name)
+    ingredient_module = im()
+    ingredient_list = im.load_ingredients_from_file(file_name)
     while True:
         print("\n레시피 추천 프로그램")
         print("1. 재료 추가")
@@ -11,12 +12,12 @@ try:
         choice = input("선택: ") 
         if choice == '1':
             ingredient = input("재료를 입력하세요: ")
-            add_ingredient(ingredient_list, ingredient) 
+            im.add_ingredient(ingredient_list, ingredient) 
             print("재료가 추가되었습니다.") 
         elif choice == '2':
-            display_ingredient(ingredient_list)
+            im.display_ingredient(ingredient_list)
         elif choice == '3': 
-            save_ingredients_to_file(ingredient_list, file_name)
+            im.save_ingredients_to_file(ingredient_list, file_name)
             print("프로그램을 종료합니다.")
             break
         else:

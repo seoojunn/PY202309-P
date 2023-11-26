@@ -1,4 +1,4 @@
-class ingredient_module:
+class IngredientModule:
     #재료 추가하는 함수 생성
     def add_ingredient(ingredient_list, ingredient): 
         ingredient_list.append(ingredient)
