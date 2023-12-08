@@ -8,7 +8,8 @@ try:
         print("\n레시피 추천 프로그램")
         print("1. 재료 추가")
         print("2. 재료 목록 표시")
-        print("3. 종료")
+        print("3. 재료 수정")
+        print("4. 종료")
         choice = input("선택: ") 
         if choice == '1':
             ingredient = input("재료를 입력하세요: ")
@@ -16,7 +17,11 @@ try:
             print("재료가 추가되었습니다.") 
         elif choice == '2':
             im.display_ingredient(ingredient_list)
-        elif choice == '3': 
+        elif choice =='3':
+            index = int(input("수정할 재료의 인덱스를 입력하세요(1번부터 입력): "))- 1
+            new_ingredient = input("새로운 재료를 입력하세요: ")
+            im.modify_ingredient(ingredient_list,index,new_ingredient)
+        elif choice == '4': 
             im.save_ingredients_to_file(ingredient_list, file_name)
             print("프로그램을 종료합니다.")
             break

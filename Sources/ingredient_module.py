@@ -18,7 +18,7 @@ class IngredientModule:
             write_fp.write(ingredient+"\n")
         write_fp.close()
         print("재료가 파일에 저장되었습니다.")
-    #재료를 읽어오는 함수    
+    #재료를 읽어오는 함수
     def load_ingredients_from_file(filename):
         try:
             ingredient_list = []
@@ -30,3 +30,10 @@ class IngredientModule:
             return ingredient_list
         except FileNotFoundError:
             print("파일을 찾을 수 없습니다.")
+     # 재료를 수정하는 함수
+    def modify_ingredient(ingredient_list, index, new_ingredient):
+        if 0 <= index < len(ingredient_list):
+            ingredient_list[index] = new_ingredient
+            print("재료가 수정되었습니다.")
+        else:
+            print("유효하지 않은 인덱스입니다.")
