@@ -37,3 +37,10 @@ class IngredientModule:
             print("재료가 수정되었습니다.")
         else:
             print("유효하지 않은 인덱스입니다.")
+    #재료를 제거하는 함수
+    def remove_ingredient(ingredient_list, index):
+        if 0 <= index < len(ingredient_list):
+            removed_ingredient = ingredient_list.pop(index)
+            print(f"{removed_ingredient}이(가) 제거되었습니다.")
+        else:
+            print("유효하지 않은 인덱스입니다.")
